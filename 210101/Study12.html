@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 15px;
+            }
+        </style>
+        <title>HTML 7강</title>
+    </head>
+    <body>
+        <h2>순서없는 목록 (Unordered List)</h2>
+        <ul>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ul>
+        <br>
+
+        <h2>순서있는 목록 (Ordered List)</h2>
+        <ol>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol>
+        <br>
+
+        <ol type="A">
+            <li value="2">Coffee</li>
+            <li value="4">Tea</li>
+            <li>Milk</li>
+        </ol>
+        <br>
+
+        <ol type="a">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol>
+        <br>
+
+        <ol type="I">
+            <li>Coffee</li>
+            <li value="3">Tea</li>
+            <li>Milk</li>
+        </ol>
+        <br>
+
+        <ol type="i">
+            <li value="2">Coffee</li>
+            <li value="4">Tea</li>
+            <li>Milk</li>
+        </ol>
+        <br>
+
+        <ol start="3">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol>
+        <br>
+
+        <ol reversed>
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Milk</li>
+        </ol>
+        <br>
+
+        <h2>중첩 목록</h2>
+        <ul>
+            <li>Coffee</li>
+            <li>Tea
+                <ol>
+                    <li>Black tea</li>
+                    <li>Green tea</li>
+                </ol>
+            </li>
+            <li>Milk</li>
+        </ul>
+        <br>
+
+        <table border="1">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Score</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+            </tr>
+        </table>
+        <br><br>
+
+        <h2>2개의 culumn을 span</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th colspan="2">Telephone</th>
+            </tr>
+            <tr>
+                <td>Bill Gates</td>
+                <td>555 77 854</td>
+                <td>555 77 855</td>
+            </tr>
+        </table>
+
+        <h2>2개의 row를 span</h2>
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td>Bill Gates</td>
+            </tr>
+            <tr>
+                <th rowspan="2">Telephone:</th>
+                <td>555 77 854</td>
+            </tr>
+            <tr>
+                <td>555 77 855</td>
+            </tr>
+        </table>
+    </body>
+</html>
