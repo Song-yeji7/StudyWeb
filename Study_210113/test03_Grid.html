@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <style>
+        .row { margin-bottom: 10px; }
+        [class|="col"] {
+            background: #2db34a;
+            border: 1px solid #eaeaed;
+            height: 50px;
+            font-size: .8em;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+        }
+        .blue { color: blue; }
+        .red  { color: red; }
+        p.bg-info {
+            font-weight: bold;
+            padding: 10px;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <p>viewport 너비와 관계없이 항상 수평으로 정렬된다.</p>
+    <div class="row">
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+        <div class="col-xs-1">xs-1</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-8">xs-8</div>
+        <div class="col-xs-4">xs-4</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5">xs-5</div>
+        <div class="col-xs-5">xs-5</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5">xs-5</div>
+        <div class="col-xs-5">xs-5</div>
+        <div class="col-xs-4">xs-4</div>
+    </div>
+</div>
+<div class="container-fluid">
+    <p>viewport width가 768px 이상(768px ~)일 때 .col-sm-* class는 적용된다. 768px 미만일 때는 media query에 의해 .col-sm-* class가 적용되지 않고 div 요소의 block 특성에 의해 100%의 너비를 가지며 수직으로 쌓이게 된다.</p>
+    <div class="row">
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+        <div class="col-sm-1">sm-1</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">sm-8</div>
+        <div class="col-sm-4">sm-4</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">sm-5</div>
+        <div class="col-sm-5">sm-5</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5">sm-5</div>
+        <div class="col-sm-5">sm-5</div>
+        <div class="col-sm-4">sm-4</div>
+    </div>
+</div>
+<div class="red blue">Text</div>
+<div class="row">
+    <div class="col-sm-12 col-md-8">.col-sm-12 .col-md-8</div>
+    <div class="col-sm-6">.col-sm-6</div>
+</div>
+<div class="container-fluid">
+    <p>Viewport width가 992px 이상이면 2열, 미만이면 1열로 정렬된다</p>
+    <div class="row">
+        <!--
+        viewport width가 992px(medium device) 이상이면
+        .col-md-8 class가 적용되어 width는 8/12(66.66666667%)
+
+        viewport width가 992px(medium device) 미만이면
+        .col-xs-12 class가 적용되어 width는 12/12(100%)
+        -->
+        <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+        <!--
+        viewport width가 992px(medium device) 이상이면
+        .col-md-4 class가 적용되어 width는 4/12(33.33333333%)
+
+        viewport width가 992px(medium device) 미만이면
+        .col-xs-12 class가 적용되어 width는 12/12(100%)
+        -->
+        <div class="col-xs-12 col-md-4">.col-xs-12 .col-md-4</div>
+    </div>
+
+    <p>Viewport width가 992px 이상이면 3열, 미만이면 1열로 정렬된다</p>
+    <div class="row">
+        <!--
+        viewport width가 992px(medium device) 이상이면
+        .col-md-4 class가 적용되어 width는 4/12(33.33333333%)
+
+        viewport width가 992px(medium device) 미만이면
+        .col-xs-12 class가 적용되어 width는 12/12(100%)
+        -->
+        <div class="col-xs-12 col-md-4">.col-xs-12 .col-md-4</div>
+        <div class="col-xs-12 col-md-4">.col-xs-12 .col-md-4</div>
+        <div class="col-xs-12 col-md-4">.col-xs-12 .col-md-4</div>
+    </div>
+
+    <p>viewport width와 관계없이 2열로 정렬된다</p>
+    <div class="row">
+        <!--
+        viewport width와 관계없이 .col-xs-6 class가 적용되어 width는 6/12(50%)
+        -->
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+    </div>
+</div>
+<div class="container">
+    <p class="bg-info">Viewport width가 992px 이상이면 3열, 768px~991px이면 2열, 768px미만이면 1열로 정렬된다</p>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">1</div>
+        <div class="col-xs-12 col-sm-6 col-md-4">2</div>
+        <div class="col-xs-12 col-sm-6 col-md-4">3</div>
+        <div class="col-xs-12 col-sm-6 col-md-4">4</div>
+        <div class="col-xs-12 col-sm-6 col-md-4">5</div>
+        <div class="col-xs-12 col-sm-6 col-md-4">6</div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9">
+            Level 1: .col-sm-9
+            <div class="row">
+                <div class="col-xs-8 col-sm-6">
+                    Level 2: .col-xs-8 .col-sm-6
+                </div>
+                <div class="col-xs-4 col-sm-6">
+                    Level 2: .col-xs-4 .col-sm-6
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4">.col-xs-4</div>
+        <div class="col-xs-4 col-xs-offset-4">.col-xs-4 .col-xs-offset-4</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-3">.col-xs-3 .col-xs-offset-3</div>
+        <div class="col-xs-3 col-xs-offset-3">.col-xs-3 .col-xs-offset-3</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">.col-xs-6 .col-xs-offset-3</div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-9 col-xs-push-3">.col-xs-9 .col-xs-push-3</div>
+        <div class="col-xs-3 col-xs-pull-9">.col-xs-3 .col-xs-pull-9</div>
+    </div>
+</div>
+</body>
+</html>
