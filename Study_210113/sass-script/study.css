@@ -1,0 +1,105 @@
+@charset "UTF-8";
+body {
+  color: #333;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  line-height: 125%;
+}
+
+header {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#main {
+  width: 960px;
+  margin: 20px auto;
+  content: "First content";
+  new-content: "First time reference";
+}
+#main section p {
+  color: #333;
+}
+#main section p a:link {
+  color: #333;
+}
+
+footer {
+  width: 960px;
+  margin: 0 auto;
+  color: #3c763d;
+}
+
+#foo {
+  width: 970px;
+}
+
+#bar {
+  width: 1920px;
+}
+
+p {
+  /*
+    font: font-style font-variant font-weight font-size/line-height font-family
+  */
+  font: italic bold 12px/30px Georgia, serif;
+  font: italic bold 12px/30px Georgia, serif;
+  border-radius: 10px 20px/20px;
+  /*
+  border-top-left-radius: 10px 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 10px 20px;
+  border-bottom-left-radius: 20px;
+  */
+  width: 500px;
+  height: 250px;
+  margin-left: 9px;
+  font: 12px/30px;
+  /*
+  color: #010203 * 2;
+  // R: 01 * 2 = 02
+  // G: 02 * 2 = 04
+  // B: 03 * 2 = 06
+  // => #020406
+
+  color: rgba(255, 0, 0, 0.75) + rgba(0, 255, 0, 0.75);
+  // alpha(투명도)는 연산되지 않는다
+  // color: rgba(255, 255, 0, 0.75);
+
+  color: opacify($translucent-red, 0.3);
+  // => color: rgba(255, 0, 0, 0.8);
+
+  background-color: transparentize($translucent-red, 0.25);
+  // => background-color: rgba(255, 0, 0, 0.25);
+  */
+}
+
+p.foo {
+  border-color: blue;
+}
+
+.someclass {
+  font: 12px/30px;
+}
+
+a {
+  color: #ccc;
+}
+a.home {
+  color: #f0f;
+}
+a:hover {
+  text-decoration: none;
+}
+a > span {
+  color: blue;
+}
+a span {
+  color: red;
+}
+
+body {
+  font: 16px/125% Arial, sans-serif;
+}
+
+/*# sourceMappingURL=study.css.map */

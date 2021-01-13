@@ -1,0 +1,168 @@
+$width: 960px; // 전역 변수
+//$width: 100px;
+$site_max_width: 960px;
+$font_color: #333;
+$link_color: #00c;
+$font_family: Arial, sans-serif;
+$font_size: 16px;
+$line_height: percentage(20px / $font_size);
+
+$name: foo;
+$attr: border;
+
+//이미 값이 할당되어 있는 변수에 !default flag를 사용하면 적용되지 않는다.
+$content: "First content";
+$content: "Second content?" !default;
+$new_content: "First time reference" !default;
+
+body {
+  color: $font_color;
+
+  // Property Nesting
+  font: {
+    size: $font_size;
+    family: $font_family;
+  }
+
+  line-height: $line_height;
+}
+
+header {
+  width: $width;
+  margin: 0 auto;
+}
+
+#main {
+  //width: 100%;
+  //max-width: $site_max_width;
+
+  $color: #333; // 지역 변수
+  width: $width;
+  margin: 20px auto;
+  section {
+    p {
+      color: $color;
+      a:link {
+        color: $color;
+      }
+    }
+  }
+
+  content: $content; // "First content"
+  new-content: $new_content; // "First time reference"
+}
+
+footer {
+  width: $width;
+  margin: 0 auto;
+  color: #3c763d; // Error: Undefined variable: "$color".
+}
+
+#foo {
+  width: $width + 10; // 110px
+  //width: $width + 10em; // 100px + 10em => Error: Incompatible units em and px.
+  //width: 5% + 10%; // 15%
+  //width: calc(25% - 5px);
+}
+
+#bar {
+  width: $width + 10in; // 1060px
+}
+
+p {
+  /*
+    font: font-style font-variant font-weight font-size/line-height font-family
+  */
+  font: italic bold 12px/30px Georgia, serif;
+
+  // font와 border-radius의 '/'는 CSS문법에 맞는 표현이므로 연산되지 않는다.
+  font: italic bold 12px/30px Georgia, serif;
+  // 타원형 둥근 모서리
+  border-radius: 10px 20px/20px;
+  /*
+  border-top-left-radius: 10px 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 10px 20px;
+  border-bottom-left-radius: 20px;
+  */
+
+  $width: 1000px;
+
+  width: $width / 2;            // 변수에 대해 사용 →　width: 500px;
+  height: (500px / 2);          // 괄호 내에서 사용 →　height: 250px;
+  margin-left: 5px + 8px / 2px; // 다른 연산의 일부로서 사용 →　margin-left: 9px;
+
+  $font-size: 12px;
+  $line-height: 30px;
+  font: #{$font-size}/#{$line-height};  // 12px/30px
+
+  //색상 혼합 지원 안됨... : https://github.com/sass/sass/issues/2543
+  //color: #010203 + #040506;
+  // R: 01 + 04 = 05
+  // G: 02 + 05 = 07
+  // B: 03 + 06 = 09
+  // => #050709
+
+  /*
+  color: #010203 * 2;
+  // R: 01 * 2 = 02
+  // G: 02 * 2 = 04
+  // B: 03 * 2 = 06
+  // => #020406
+
+  color: rgba(255, 0, 0, 0.75) + rgba(0, 255, 0, 0.75);
+  // alpha(투명도)는 연산되지 않는다
+  // color: rgba(255, 255, 0, 0.75);
+
+  color: opacify($translucent-red, 0.3);
+  // => color: rgba(255, 0, 0, 0.8);
+
+  background-color: transparentize($translucent-red, 0.25);
+  // => background-color: rgba(255, 0, 0, 0.25);
+  */
+}
+
+p.#{$name} {            // p.foo
+  #{$attr}-color: blue; // border-color: blue;
+}
+
+.someclass {
+  $font-size: 12px;
+  $line-height: 30px;
+  // 연산의 대상으로 취급되지 않도록
+  font: #{$font-size} / #{$line-height}; // 12px / 30px
+}
+
+a {
+  color: #ccc;
+
+  &.home {
+    color: #f0f;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  // & > span (X)
+  > span {
+    color: blue;
+  }
+
+  span {
+    color: red;
+  }
+}
+
+// _font.scss
+$font-size: 16px !default;
+$line-height: 1.5 !default;
+$font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
+body {
+  font: #{$font-size}/$line-height $font-family;
+}
+
+//$font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+//@import "font";
+

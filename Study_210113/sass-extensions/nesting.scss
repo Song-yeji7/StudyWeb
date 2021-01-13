@@ -1,0 +1,57 @@
+#navbar {
+  width: 80%;
+  height: 23px;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    float: left;
+    a {
+      font-weight: bold;
+    }
+  }
+}
+
+.myAnchor {
+  color: blue;
+
+  // .myAnchor:hover
+  &:hover {
+    text-decoration: underline;
+  }
+
+  // .myAnchor:visited
+  &:visited {
+    color: purple;
+  }
+}
+
+.funky {
+  font: {
+    family: fantasy;
+    size: 30em;
+    weight: bold;
+  }
+}
+
+@import "foo.scss";
+// 확장자는 생략 가능하다
+//@import "foo";
+// 여러 개의 파일을 한번에 임포트할 수 있다.
+//@import "rounded-corners", "text-shadow";
+
+// 변수를 사용해 문자열을 생성하여 임포트할 수도 있다.
+$family: "Open+Sans";
+@import url("http://fonts.googleapis.com/css?family=#{$family}");
+
+// style.scss
+@import "partial/vars";
+@import "partial/header";
+@import "partial/sidebar";
+@import "partial/footer";
+
+#main {
+  @import "example";
+}
